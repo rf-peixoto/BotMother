@@ -1,2 +1,2 @@
 # BotMother
-BotBrother is the one bot to teach them all.
+BotMother is the one bot to teach them all.
