@@ -39,6 +39,9 @@ class BotManager:
         self.interactions.append(interaction)
 
     def add_command(self, command, response):
+        if not command.isidentifier() or not command.islower() or ' ' in command:
+            raise ValueError('Command is not a valid bot command')
+        
         def command_callback(update: Update, context: CallbackContext):
             update.message.reply_text(response)
         
@@ -123,7 +126,10 @@ def create_bot():
 def add_command(bot_name):
     command = request.form['command']
     response = request.form['response']
-    bots[bot_name].add_command(command, response)
+    try:
+        bots[bot_name].add_command(command, response)
+    except ValueError as e:
+        flash(str(e))
     return redirect(url_for('index'))
 
 @app.route('/edit_command/<bot_name>/<command>', methods=['POST'])
