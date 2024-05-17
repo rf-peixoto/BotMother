@@ -1,5 +1,5 @@
 # BotMother
-BotMother is the one bot to teach them all.
+BotMother is the one bot to teach them all. [Find news about this thing here.](https://the-street.xyz/showthread.php?tid=38)
 
 - Create and manage Telegram bots
 - Add, edit, and delete bot commands
